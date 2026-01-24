@@ -168,9 +168,8 @@ export default function Home() {
           </div>
         </div>
         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-          <span className="text-[var(--terminal-accent)] cursor-pointer hover:underline">[ DISCOVERY_PHASE ]</span>
-          <span className="opacity-40 cursor-not-allowed">[ DEPLOYMENT ]</span>
-          <span className="opacity-40 cursor-not-allowed">[ MONITORING ]</span>
+          <Link href="/" className="text-[var(--terminal-accent)] cursor-default">[ DISCOVERY_PHASE ]</Link>
+          <Link href="/about" className="text-[var(--terminal-dim)] hover:text-[var(--terminal-text)] transition-colors opacity-60 hover:opacity-100">[ SYSTEM_MANUAL ]</Link>
         </div>
       </header>
 
