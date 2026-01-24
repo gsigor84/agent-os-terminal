@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -443,10 +444,13 @@ export default function Home() {
                         </button>
                         <button
                           onClick={copyToClipboard}
-                          className="flex items-center gap-2 text-xs uppercase font-bold bg-[var(--terminal-surface)] px-3 py-1 border border-[var(--terminal-border)] hover:border-[var(--terminal-accent)]"
+                          className={`flex items-center gap-2 text-xs uppercase font-bold bg-[var(--terminal-surface)] px-4 py-2 border-2 transition-all ${copied
+                              ? 'border-[#00f5d4] text-[#00f5d4]'
+                              : 'border-[var(--terminal-border)] hover:border-[var(--terminal-accent)] text-[var(--terminal-text)]'
+                            }`}
                         >
                           {copied ? <Check size={14} /> : <Copy size={14} />}
-                          {copied ? 'Copied' : 'Copy_Data'}
+                          {copied ? '[ COPIED! ]' : '[ COPY_PROMPT ]'}
                         </button>
                       </div>
                     </div>
