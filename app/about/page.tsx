@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Cpu, ArrowLeft, Terminal, Hammer, Brain, Zap } from 'lucide-react';
+import { ArrowLeft, Terminal, Hammer, Brain, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -22,113 +22,68 @@ export default function About() {
                     </Link>
                 </div>
                 <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-                    <Link href="/" className="text-[var(--terminal-dim)] hover:text-[var(--terminal-text)] transition-colors opacity-60 hover:opacity-100">[ DISCOVERY_PHASE ]</Link>
+                    <Link href="/" className="text-[var(--terminal-dim)] hover:text-[var(--terminal-text)] transition-colors opacity-40 hover:opacity-100">[ DISCOVERY_PHASE ]</Link>
                     <Link href="/about" className="text-[var(--terminal-accent)] cursor-default">[ SYSTEM_MANUAL ]</Link>
                 </div>
             </header>
 
             <main className="w-full max-w-5xl mx-auto p-8 md:p-16 flex flex-col gap-24">
 
-                {/* 01 PURPOSE */}
                 <section className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-                    <div className="flex gap-4 items-center mb-12">
-                        <span className="text-[var(--terminal-accent)] text-6xl font-black opacity-20">01</span>
-                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
-                            System_Purpose
-                        </h1>
-                    </div>
+                    <div className="border border-[var(--terminal-border)] p-6 bg-[var(--terminal-surface)]">
+                        <h1 className="text-4xl font-black uppercase tracking-tighter mb-4 text-[var(--terminal-accent)]">SYSTEM_MANUAL_v1.0</h1>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div className="brutalist-border p-8 bg-[var(--terminal-surface)]">
-                            <Terminal className="w-12 h-12 mb-6 text-[var(--terminal-accent)]" />
-                            <p className="text-lg font-bold leading-relaxed">
-                                AgentOS is a <span className="text-[var(--terminal-accent)]">Meta-Prompting Engine</span> designed to architect high-fidelity prompts from vague human intent.
-                            </p>
-                        </div>
-                        <div className="space-y-6 text-sm font-bold opacity-80 leading-relaxed">
-                            <p>
-                                Most LLM interactions fail due to lack of context and structural guidance. AgentOS solves this by implementing a "Chain-of-Thought" (CoT) pre-processor that expands your simple request into a robust engineering specification before the AI even begins its main task.
-                            </p>
-                            <p>
-                                It behaves like a Senior Engineer pairing with you—asking the right questions, checking edge cases, and formatting the output for machine optimality.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                        <div className="space-y-8 font-mono">
 
-                {/* 02 MODES */}
-                <section className="space-y-8">
-                    <div className="flex gap-4 items-center mb-12">
-                        <span className="text-[var(--terminal-accent)] text-6xl font-black opacity-20">02</span>
-                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
-                            Operational_Modes
-                        </h1>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--terminal-text)] border-2 border-[var(--terminal-text)]">
-                        {/* FAST */}
-                        <div className="p-8 bg-[var(--terminal-bg)]">
-                            <div className="mb-6 w-12 h-12 brutalist-border-dim flex items-center justify-center text-[var(--terminal-accent)]">
-                                <Zap />
+                            {/* PROTOCOL PURPOSE */}
+                            <div className="space-y-2">
+                                <span className="text-xs font-bold bg-[var(--terminal-text)] text-[var(--terminal-bg)] px-2 py-1">[ PROTOCOL_PURPOSE ]</span>
+                                <p className="text-sm leading-relaxed opacity-90 border-l-2 border-[var(--terminal-accent)] pl-4">
+                                    To transform raw input into high-fidelity prompting structures. AgentOS implements Chain-of-Thought (CoT) pre-processing to expand simple human intent into robust engineering specifications suitable for advanced LLMs.
+                                </p>
                             </div>
-                            <h3 className="font-black text-xl uppercase tracking-tighter mb-2">Fast Mode</h3>
-                            <p className="text-xs opacity-70 leading-relaxed font-bold">
-                                For quick tasks. Best for "Rewrite this email" or "Fix this regex". Uses a standard 1-shot optimization template.
-                            </p>
-                        </div>
 
-                        {/* BUILDER */}
-                        <div className="p-8 bg-[var(--terminal-bg)]">
-                            <div className="mb-6 w-12 h-12 brutalist-border-dim flex items-center justify-center text-[var(--terminal-accent)]">
-                                <Hammer />
+                            {/* OPERATIONAL MODES */}
+                            <div className="space-y-4">
+                                <span className="text-xs font-bold bg-[var(--terminal-text)] text-[var(--terminal-bg)] px-2 py-1">[ OPERATIONAL_MODES ]</span>
+
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div className="border border-[var(--terminal-border)] p-4">
+                                        <Zap className="mb-2 text-[var(--terminal-accent)]" />
+                                        <h3 className="font-bold uppercase text-xs mb-1">Fast Mode</h3>
+                                        <p className="text-[10px] opacity-70">Direct, 1-shot template expansion for simple tasks.</p>
+                                    </div>
+                                    <div className="border border-[var(--terminal-border)] p-4">
+                                        <Hammer className="mb-2 text-[var(--terminal-accent)]" />
+                                        <h3 className="font-bold uppercase text-xs mb-1">Builder Mode</h3>
+                                        <p className="text-[10px] opacity-70">Comprehensive, interactive interrogation flow.</p>
+                                    </div>
+                                    <div className="border border-[var(--terminal-border)] p-4">
+                                        <Brain className="mb-2 text-[var(--terminal-accent)]" />
+                                        <h3 className="font-bold uppercase text-xs mb-1">Thinking Mode</h3>
+                                        <p className="text-[10px] opacity-70">Deep reasoning using Tree-of-Thoughts (ToT).</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 className="font-black text-xl uppercase tracking-tighter mb-2">Builder Mode</h3>
-                            <p className="text-xs opacity-70 leading-relaxed font-bold">
-                                Interactive interrogation. The system will pause to ask you clarifying questions (Target Audience, Constraints, Tone) before generating.
-                            </p>
-                        </div>
 
-                        {/* THINKING */}
-                        <div className="p-8 bg-[var(--terminal-bg)]">
-                            <div className="mb-6 w-12 h-12 brutalist-border-dim flex items-center justify-center text-[var(--terminal-accent)]">
-                                <Brain />
+                            {/* OPERATION */}
+                            <div className="space-y-2">
+                                <span className="text-xs font-bold bg-[var(--terminal-text)] text-[var(--terminal-bg)] px-2 py-1">[ USAGE_INSTRUCTIONS ]</span>
+                                <ul className="text-sm space-y-2 list-decimal list-inside opacity-90 border-l-2 border-[var(--terminal-accent)] pl-4">
+                                    <li>Select Operational Mode via the Terminal Interface.</li>
+                                    <li>Input logic parameters (your objective) into the text field.</li>
+                                    <li>Execute the generation sequence.</li>
+                                </ul>
                             </div>
-                            <h3 className="font-black text-xl uppercase tracking-tighter mb-2">Thinking Mode</h3>
-                            <p className="text-xs opacity-70 leading-relaxed font-bold">
-                                For complex logic. Uses "Tree of Thoughts" (ToT) to diagnose the request, propose 3 strategies, selecting the best one for the final prompt.
-                            </p>
+
                         </div>
-                    </div>
-                </section>
-
-                {/* 03 HOW TO USE */}
-                <section className="space-y-8 pb-24">
-                    <div className="flex gap-4 items-center mb-12">
-                        <span className="text-[var(--terminal-accent)] text-6xl font-black opacity-20">03</span>
-                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
-                            Execution_Protocol
-                        </h1>
-                    </div>
-
-                    <div className="space-y-4">
-                        {[
-                            "Select desired Operational Mode based on task complexity.",
-                            "Input raw objective (Parameters) into the terminal text field.",
-                            "Click [ EXECUTE_GENERATION ] to initialize the protocol.",
-                            "Review the [ OUTPUT_GENERATED ] and click [ COPY_PROMPT ] to utilize the artifact."
-                        ].map((step, i) => (
-                            <div key={i} className="flex items-center gap-6 p-4 border-b border-[var(--terminal-border)]">
-                                <span className="font-mono text-xs font-bold text-[var(--terminal-accent)]">STEP_0{i + 1}</span>
-                                <p className="font-bold uppercase text-sm md:text-base">{step}</p>
-                            </div>
-                        ))}
                     </div>
                 </section>
 
             </main>
 
             <footer className="p-4 border-t-2 border-[var(--terminal-border)] bg-[var(--terminal-bg)] text-[9px] uppercase tracking-widest flex justify-between font-bold text-[var(--terminal-dim)] sticky bottom-0 z-50">
-                <div>MANUAL_VERSION: 2.0.4</div>
+                <div>MANUAL_VERSION: 1.0.0</div>
                 <div>(C) AGENT_OS INC</div>
             </footer>
 

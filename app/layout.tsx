@@ -10,6 +10,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "AgentOS v2.0 | Arctic Ice Terminal",
   description: "High-performance prompt engineering pipeline",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

@@ -170,7 +170,7 @@ export default function Home() {
         </div>
         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
           <Link href="/" className="text-[var(--terminal-accent)] cursor-default">[ DISCOVERY_PHASE ]</Link>
-          <Link href="/about" className="text-[var(--terminal-dim)] hover:text-[var(--terminal-text)] transition-colors opacity-60 hover:opacity-100">[ SYSTEM_MANUAL ]</Link>
+          <Link href="/about" className="text-[var(--terminal-dim)] hover:text-[var(--terminal-text)] transition-colors opacity-40 hover:opacity-100">[ SYSTEM_MANUAL ]</Link>
         </div>
       </header>
 
@@ -445,8 +445,8 @@ export default function Home() {
                         <button
                           onClick={copyToClipboard}
                           className={`flex items-center gap-2 text-xs uppercase font-bold bg-[var(--terminal-surface)] px-4 py-2 border-2 transition-all ${copied
-                              ? 'border-[#00f5d4] text-[#00f5d4]'
-                              : 'border-[var(--terminal-border)] hover:border-[var(--terminal-accent)] text-[var(--terminal-text)]'
+                            ? 'border-[#00f5d4] text-[#00f5d4]'
+                            : 'border-[var(--terminal-border)] hover:border-[var(--terminal-accent)] text-[var(--terminal-text)]'
                             }`}
                         >
                           {copied ? <Check size={14} /> : <Copy size={14} />}
