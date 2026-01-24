@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --terminal-bg: #040d1a;
+  --terminal-text: #E0F7FA;
+  --terminal-accent: #00f5d4;
+  --terminal-border: #2c4a63;
+  --terminal-dim: #9BBCE0;
+  --terminal-surface: #0a192f;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-mono: var(--font-jetbrains-mono);
+  --color-terminal-bg: var(--terminal-bg);
+  --color-terminal-text: var(--terminal-text);
+  --color-terminal-accent: var(--terminal-accent);
+  --color-terminal-border: var(--terminal-border);
+  --color-terminal-dim: var(--terminal-dim);
+  --color-terminal-surface: var(--terminal-surface);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: var(--font-jetbrains-mono);
+}
+
+.brutalist-border {
+  border: 2px solid var(--terminal-text);
+}
+
+.brutalist-border-dim {
+  border: 1px solid var(--terminal-border);
+}
+
+.accent-shadow {
+  box-shadow: 4px 4px 0px var(--terminal-accent);
+}
+
+.white-shadow {
+  box-shadow: 4px 4px 0px var(--terminal-text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-border);
+}
+
+input[type="radio"]:checked + div {
+  background-color: var(--terminal-accent);
+  color: var(--terminal-bg);
+  border-color: var(--terminal-text);
+}
+
+/* Base Prosemirror / Markdown styles for Terminal */
+.prose {
+  color: var(--terminal-text);
+  max-width: none;
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: var(--terminal-accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+.prose strong {
+  color: var(--terminal-accent);
+}
+.prose code {
+  color: var(--terminal-dim);
+  background: var(--terminal-surface);
+  padding: 0.2em 0.4em;
+  border-radius: 0;
+  border: 1px solid var(--terminal-border);
+}
+.prose table {
+  text-align: left;
+  border: 1px solid var(--terminal-border);
+}
+.prose th {
+  background: var(--terminal-surface);
+  padding: 0.5em;
+  border-bottom: 2px solid var(--terminal-border);
+  color: var(--terminal-accent);
+}
+.prose td {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--terminal-border);
 }
