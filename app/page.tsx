@@ -80,6 +80,10 @@ export default function Home() {
   };
 
   const generate = async (currentAnswers?: Record<string, string>) => {
+    // FORCE API CONNECTION DEBUG
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://api-nnahwgx2jq-uc.a.run.app";
+    console.log("Using API:", apiUrl);
+
     if (!task) return;
     setLoading(true);
     setResult(null);
@@ -94,7 +98,7 @@ export default function Home() {
     }
 
     try {
-      const res = await fetch('/api/generate', {
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
