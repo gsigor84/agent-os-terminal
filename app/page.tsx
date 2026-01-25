@@ -433,9 +433,9 @@ export default function Home() {
                     transition={{ duration: 0.4 }}
                     className="space-y-8"
                   >
-                    <div className="flex justify-between items-center border-b-2 border-[var(--terminal-border)] pb-4">
-                      <h2 className="text-3xl font-black uppercase tracking-tighter text-[var(--terminal-accent)]">Output_Generated</h2>
-                      <div className="flex gap-4">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b-2 border-[var(--terminal-border)] pb-4">
+                      <h2 className="text-xl md:text-3xl font-black uppercase tracking-tighter text-[var(--terminal-accent)]">Output_Generated</h2>
+                      <div className="flex gap-4 w-full md:w-auto justify-end">
                         <button
                           onClick={() => setResult(null)}
                           className="text-xs uppercase font-bold text-[var(--terminal-dim)] hover:text-[var(--terminal-text)]"
@@ -445,8 +445,8 @@ export default function Home() {
                         <button
                           onClick={copyToClipboard}
                           className={`flex items-center gap-2 text-xs uppercase font-bold bg-[var(--terminal-surface)] px-4 py-2 border-2 transition-all ${copied
-                            ? 'border-[#00f5d4] text-[#00f5d4]'
-                            : 'border-[var(--terminal-border)] hover:border-[var(--terminal-accent)] text-[var(--terminal-text)]'
+                              ? 'border-[#00f5d4] text-[#00f5d4]'
+                              : 'border-[var(--terminal-border)] hover:border-[var(--terminal-accent)] text-[var(--terminal-text)]'
                             }`}
                         >
                           {copied ? <Check size={14} /> : <Copy size={14} />}
