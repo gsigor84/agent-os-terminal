@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CQCM - Editorial Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                        accent: {
+                            green: "#4ADE80",
+                            orange: "#FB923C",
+                            red: "#F87171",
+                            blue: "#60A5FA"
+                        }
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .editorial-title {
+            font-size: clamp(3rem, 15vw, 12rem);
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold">C</div>
+<span class="ml-2 font-extrabold text-xl tracking-tight">CQCM</span>
+</div>
+<div class="hidden md:flex space-x-6 text-sm font-medium uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Initiatives</a>
+<a class="text-primary" href="#">Dossiers</a>
+<a class="hover:text-primary transition-colors" href="#">À propos</a>
+<a class="hover:text-primary transition-colors" href="#">Nouvelles</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-xs font-bold uppercase border-2 border-primary text-primary px-4 py-1.5 rounded-full hover:bg-primary hover:text-white transition-all">
+                        Devenir Membre
+                    </button>
+<button class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:ring-2 ring-primary transition-all" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-[20px] block">dark_mode</span>
+</button>
+<button class="p-2 lg:hidden">
+<span class="material-symbols-outlined block">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main>
+<header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+<h1 class="editorial-title font-black text-slate-900 dark:text-white uppercase mb-8">
+                NOS<br/>DOSSIERS
+            </h1>
+<div class="max-w-2xl border-l-4 border-primary pl-8">
+<p class="text-xl lg:text-2xl text-slate-600 dark:text-slate-400 leading-relaxed font-light italic">
+                    Le CQCM s'engage dans une multitude de dossiers stratégiques, contribuant ainsi à la consolidation et à l'essor du mouvement coopératif et mutualiste au Québec.
+                </p>
+</div>
+</header>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-200 dark:border-slate-800">
+<div class="space-y-32">
+<div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+<div class="w-full md:w-1/2 flex justify-center md:justify-start">
+<div class="w-48 h-48 rounded-3xl bg-accent-red/10 flex items-center justify-center text-accent-red">
+<span class="material-symbols-outlined text-8xl">stars</span>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="text-4xl font-black uppercase tracking-tight mb-6">Reconnaissance</h3>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Initiatives</span>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Ordre du mérite</span>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Prix Miella-St-Pierre</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                            L'éducation à la coopération est un principe d'action qui a fait ses preuves pour le développement du Québec depuis plus de 125 ans. Le CQCM profite de toutes les occasions pour faire découvrir la richesse de l'expérience coopérative.
+                        </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24">
+<div class="w-full md:w-1/2 flex justify-center md:justify-end">
+<div class="w-48 h-48 rounded-3xl bg-accent-green/10 flex items-center justify-center text-accent-green">
+<span class="material-symbols-outlined text-8xl">school</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 text-left md:text-right">
+<h3 class="text-4xl font-black uppercase tracking-tight mb-6">Éducation</h3>
+<div class="flex flex-wrap md:justify-end gap-2 mb-8">
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Apprentissage</span>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Formations</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                            Le CQCM contribue au développement de la fibre entrepreneuriale coopérative et des savoirs coopératifs et mutualistes. Il développe, à cet effet, une série d'outils de pointe et de programmes pour faciliter l'implantation.
+                        </p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+<div class="w-full md:w-1/2 flex justify-center md:justify-start">
+<div class="w-48 h-48 rounded-3xl bg-accent-blue/10 flex items-center justify-center text-accent-blue">
+<span class="material-symbols-outlined text-8xl">trending_up</span>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="text-4xl font-black uppercase tracking-tight mb-6">Compétences</h3>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Expertise</span>
+<span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-slate-500 uppercase tracking-tighter">Accompagnement</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                            Le CQCM a développé une expertise reconnue en éducation à la coopération, mise à contribution auprès de différents publics de tous âges, afin de préparer une nouvelle génération à coopérer et entreprendre.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900 py-24 border-y border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-sm font-bold uppercase tracking-[0.3em] text-primary mb-2">L'actualité</h2>
+<h3 class="text-4xl font-black uppercase">À LA UNE</h3>
+</div>
+<a class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors border-b-2 border-primary pb-1" href="#">
+                        VOIR TOUT <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<div class="md:col-span-2 group py-8 border-t-4 border-primary hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-all px-4 -mx-4">
+<div class="text-[12px] font-black text-accent-orange uppercase mb-4 tracking-wider">Concours</div>
+<h4 class="text-4xl font-bold mb-6 group-hover:text-primary transition-colors leading-tight">Concours : Voici un concours organisé par le CQCM.</h4>
+<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl">Participez dès maintenant et courez la chance de remporter des bourses pour vos projets coopératifs. Une opportunité unique de dynamiser votre initiative.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm uppercase tracking-widest group-hover:gap-2 transition-all" href="#">
+                            Lire la suite <span class="material-symbols-outlined text-base">chevron_right</span>
+</a>
+</div>
+<div class="space-y-12">
+<div class="group py-6 border-t border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">
+<div class="text-[11px] font-black text-accent-green uppercase mb-4 tracking-wider">Événement</div>
+<h4 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Forum annuel de la coopération et de la mutualité.</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Un rendez-vous incontournable pour les leaders du milieu afin d'échanger sur les meilleures pratiques.</p>
+<a class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all" href="#">
+                                Lire la suite <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="group py-6 border-t border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">
+<div class="text-[11px] font-black text-accent-blue uppercase mb-4 tracking-wider">Publication</div>
+<h4 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Nouveau rapport sur l'impact des coopératives.</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Découvrez les derniers chiffres illustrant la force du mouvement coopératif québécois en 2023.</p>
+<a class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all" href="#">
+                                Lire la suite <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-50 dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex items-center">
+<div class="w-10 h-10 bg-slate-300 dark:bg-slate-700 rounded flex items-center justify-center text-white font-bold text-xl">C</div>
+<span class="ml-3 font-extrabold text-2xl tracking-tight opacity-50">CQCM</span>
+</div>
+<div class="flex flex-wrap justify-center gap-10 text-xs font-bold uppercase tracking-widest text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Politique de confidentialité</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+<a class="hover:text-primary transition-colors" href="#">Carrières</a>
+</div>
+<div class="flex gap-6">
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">link</span>
+</a>
+</div>
+</div>
+<div class="mt-12 pt-12 border-t border-slate-200 dark:border-slate-800 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                © 2024 CQCM. TOUS DROITS RÉSERVÉS.
+            </div>
+</div>
+</footer>
+
+</body></html>

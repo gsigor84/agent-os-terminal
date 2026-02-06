@@ -47,11 +47,16 @@ export default function About() {
                             <div className="space-y-4">
                                 <span className="text-xs font-bold bg-[var(--terminal-text)] text-[var(--terminal-bg)] px-2 py-1">[ OPERATIONAL_MODES ]</span>
 
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                                     <div className="border border-[var(--terminal-border)] p-4">
                                         <Zap className="mb-2 text-[var(--terminal-accent)]" />
-                                        <h3 className="font-bold uppercase text-xs mb-1">Fast Mode</h3>
+                                        <h3 className="font-bold uppercase text-xs mb-1">Fast Search</h3>
                                         <p className="text-[10px] opacity-70">Direct, 1-shot template expansion for simple tasks.</p>
+                                    </div>
+                                    <div className="border border-[var(--terminal-border)] p-4">
+                                        <Terminal className="mb-2 text-[var(--terminal-accent)]" />
+                                        <h3 className="font-bold uppercase text-xs mb-1">General Prompt</h3>
+                                        <p className="text-[10px] opacity-70">Universal prompt enhancer not focused on web search.</p>
                                     </div>
                                     <div className="border border-[var(--terminal-border)] p-4">
                                         <Hammer className="mb-2 text-[var(--terminal-accent)]" />
