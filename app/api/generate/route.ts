@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const DEFAULT_LOCAL_FUNCTION_URL =
     'http://127.0.0.1:5001/demo-project/us-central1/api';
+const DEFAULT_PRODUCTION_FUNCTION_URL =
+    'https://api-nnahwgx2jq-uc.a.run.app';
 
 function getCandidateUpstreamUrls(): string[] {
     const candidates = [
@@ -9,6 +11,7 @@ function getCandidateUpstreamUrls(): string[] {
         process.env.BACKEND_API_BASE_URL
             ? `${process.env.BACKEND_API_BASE_URL.replace(/\/$/, '')}/`
             : undefined,
+        DEFAULT_PRODUCTION_FUNCTION_URL,
         DEFAULT_LOCAL_FUNCTION_URL,
     ].filter(Boolean) as string[];
 
