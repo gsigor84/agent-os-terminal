@@ -22,6 +22,26 @@ export async function POST(req: NextRequest) {
     try {
         const payload = await req.json();
 
+        if (payload?.mode === 'builder' || payload?.mode === 'general') {
+            const previousAnswers = payload?.context_answers?.previous_answers;
+
+            if (previousAnswers && typeof previousAnswers === 'object') {
+                const hasAtLeastOneAnswer = Object.values(previousAnswers).some(
+                    (value) => typeof value === 'string' && Boolean(value.trim())
+                );
+
+                if (!hasAtLeastOneAnswer) {
+                    return NextResponse.json(
+                        {
+                            status: 'error',
+                            message: 'Please answer at least one clarification question before generating the prompt.',
+                        },
+                        { status: 400 }
+                    );
+                }
+            }
+        }
+
         const urls = getCandidateUpstreamUrls();
         const connectionErrors: Array<{ upstream_url: string; error: string }> = [];
         let lastNonJsonError: {

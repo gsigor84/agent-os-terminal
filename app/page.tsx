@@ -30,6 +30,7 @@ export default function Home() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [builderStep, setBuilderStep] = useState<'initial' | 'questions'>('initial');
   const [questionMode, setQuestionMode] = useState<Mode | null>(null);
+  const [answerValidationError, setAnswerValidationError] = useState('');
 
   const handleReset = () => {
     setTask('');
@@ -46,6 +47,7 @@ export default function Home() {
     setResult(null);
     setQuestions([]);
     setAnswers({});
+    setAnswerValidationError('');
     setBuilderStep('initial');
     setQuestionMode(null);
   };
@@ -64,7 +66,7 @@ export default function Home() {
       mode: mode,
     };
 
-    if (mode === 'builder' && currentAnswers) {
+    if ((mode === 'builder' || mode === 'general') && currentAnswers) {
       payload.context_answers = { previous_answers: currentAnswers };
     }
 
@@ -84,6 +86,7 @@ export default function Home() {
         if (status === 'needs_input') {
           const questions = data.questions || data.data?.questions || [];
           setQuestions(questions);
+          setAnswerValidationError('');
           setBuilderStep('questions');
           setQuestionMode(mode);
         } else {
@@ -105,15 +108,29 @@ export default function Home() {
   };
 
   const handleBuilderSubmit = () => {
+    const hasAtLeastOneAnswer = questions.some((q) => Boolean(answers[q]?.trim()));
+    if (!hasAtLeastOneAnswer) {
+      setAnswerValidationError('Please answer at least one question before continuing.');
+      return;
+    }
+
+    setAnswerValidationError('');
     generate(answers);
   };
 
   const handleAnswerChange = (question: string, value: string) => {
+    if (answerValidationError) {
+      setAnswerValidationError('');
+    }
+
     setAnswers(prev => ({
       ...prev,
       [question]: value
     }));
   };
+
+  const hasAtLeastOneAnswer =
+    questions.length > 0 && questions.some((q) => Boolean(answers[q]?.trim()));
 
   const copyToClipboard = () => {
     if (result?.final_prompt) {
@@ -295,6 +312,7 @@ export default function Home() {
                           <p className="font-bold text-lg mb-2">{q}</p>
                           <input
                             type="text"
+                            value={answers[q] || ''}
                             className="w-full rounded-lg border border-[var(--terminal-border)] bg-[var(--terminal-bg)] p-3 focus:border-[var(--terminal-accent)] transition-colors outline-none"
                             onChange={(e) => handleAnswerChange(q, e.target.value)}
                           />
@@ -302,10 +320,14 @@ export default function Home() {
                       ))}
                     </div>
 
+                    {answerValidationError && (
+                      <p className="text-sm text-red-600 font-medium">{answerValidationError}</p>
+                    )}
+
                     <button
                       onClick={handleBuilderSubmit}
-                      disabled={loading}
-                      className="w-full rounded-xl bg-[var(--terminal-accent)] text-white p-3.5 font-semibold hover:opacity-90 transition-colors"
+                      disabled={loading || !hasAtLeastOneAnswer}
+                      className={`w-full rounded-xl bg-[var(--terminal-accent)] text-white p-3.5 font-semibold transition-colors ${(loading || !hasAtLeastOneAnswer) ? 'opacity-60 cursor-not-allowed' : 'hover:opacity-90'}`}
                     >
                       {loading ? 'Synthesizing...' : questionMode === 'general' ? 'Continue_General_Mode' : 'Submit_Parameters_'}
                     </button>
